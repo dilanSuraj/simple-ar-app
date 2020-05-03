@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene embedded arjs='trackingMethod: best;'>
+		<a-anchor hit-testing-enabled='true'>
+			<!-- Add model-->
+			<!-- <a-entity position="0.5 -2 -0.5" scale="0.01 0.01 0.01" obj-model="obj: url(models/test.obj);"
+				material="src: textures/blank.mtl"
+			> -->
+			<a-entity position="0.5 -1 -0.5" scale="0.1 0.1 0.1" obj-model="obj: url(models/test.obj);">
+			</a-entity>
+			<!-- Add animations-->
+			<a-sphere position="0.5 1.5 -0.5" color="white" radius="0.15">
+				<a-animation attribute="color" dur="10000" from="white" to="green" repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+			<a-sphere position="2 0 -0.5" color="white" radius="0.15">
+				<a-animation attribute="color" dur="10000" from="white" to="red" repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+			<a-sphere position="-0.5 0 -0.5" color="white" radius="0.15">
+				<a-animation attribute="color" dur="10000" from="white" to="blue" repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+			<!-- Add card info-->
+			<a-plane src="textures/businesscard.png" height="2" width="3" color="grey" position="-2.5 1 0">
+				<a-text color="white" value="\n\n Price: Rs.5000.00 \n\n Company: CreativeAR PVT.Ltd \n\n" position="-1.5 0.25 0" height="0.5"></a-text>
+				<a-text color="red" value="\n\n -Just do It"  position="-0.05 -0.5 0" height="-0.5"></a-text> 
+			</a-plane>
+		</a-anchor>
+		<a-camera-static />
+	</a-scene>
+</body>
+
+</html>
