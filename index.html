@@ -5,30 +5,24 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='trackingMethod: best;'>
 		<a-anchor hit-testing-enabled='true'>
+			<a-mixin id="slogan" text="align: center; width: 2;
+            font: https://cdn.aframe.io/fonts/mozillavr.fnt;
+            value: All in one place">
+			</a-mixin>
+			<a-mixin id="price" text="align: center; width: 3;
+            font: https://cdn.aframe.io/fonts/mozillavr.fnt;
+            value: Rs. 2000.00/=">
+			</a-mixin>
 			<!-- Add model-->
-			<!-- <a-entity position="0.5 -2 -0.5" scale="0.01 0.01 0.01" obj-model="obj: url(models/test.obj);"
-				material="src: textures/blank.mtl"
-			> -->
-			<a-entity position="0.5 -1 -0.5" scale="0.1 0.1 0.1" obj-model="obj: url(models/test.obj);">
+			<a-entity position="0.5 -1 -0.5" scale="0.1 0.1 0.1" obj-model="obj: url(models/test.obj);"  material="src: texture.jpg">
 			</a-entity>
-			<!-- Add animations-->
-			<a-sphere position="0.5 1.5 -0.5" color="white" radius="0.15">
-				<a-animation attribute="color" dur="10000" from="white" to="green" repeat="indefinite">
-				</a-animation>
-			</a-sphere>
-			<a-sphere position="2 0 -0.5" color="white" radius="0.15">
-				<a-animation attribute="color" dur="10000" from="white" to="red" repeat="indefinite">
-				</a-animation>
-			</a-sphere>
-			<a-sphere position="-0.5 0 -0.5" color="white" radius="0.15">
-				<a-animation attribute="color" dur="10000" from="white" to="blue" repeat="indefinite">
-				</a-animation>
-			</a-sphere>
+			<a-text mixin="slogan" position="0 1 0" rotation="180 180 180" color="white"></a-text>
+			<a-image id="image" src="textures/logo.svg" position="0 1.5 0" rotation="180 180 180" scale="0.7 0.7 0.7"></a-image>
 			<!-- Add card info-->
-			<a-plane src="textures/businesscard.png" height="2" width="3" color="grey" position="-2.5 1 0">
-				<a-text color="white" value="\n\n Price: Rs.5000.00 \n\n Company: Smart Gift Shop \n\n" position="-1.5 0.25 0" height="0.5"></a-text>
-				<a-text color="red" value="\n\n -Gift whatever you want"  position="-0.75 -0.5 0" height="-0.5"></a-text> 
-			</a-plane>
+			<a-text mixin="slogan" position="0 0.2 1.4" rotation="-90 0 0" color="red"></a-text>
+			<a-image id="image" src="textures/logo.svg" position="-1 0.2 1" rotation="-90 0 0" scale="0.7 0.7 0.7"></a-image>
+			<a-text mixin="price" position="-1 0.2 1.55" rotation="-90 0 0" color="black"></a-text>
+			<a-plane position="0 -1.2 0" rotation="-90 0 0" width="7" height="7" src="textures/bg.jpg"></a-plane>
 		</a-anchor>
 		<a-camera-static />
 	</a-scene>
